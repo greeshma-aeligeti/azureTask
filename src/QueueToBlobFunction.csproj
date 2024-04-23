@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    <OutputType>Library</OutputType>
+    <RootNamespace>YourNamespace</RootNamespace>
+    <AssemblyName>greemyfunctionapp123</AssemblyName>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+ 
+
+  <!-- Ensure that the necessary packages for Azure Functions and Azure Blob Storage are referenced -->
+  <ItemGroup>
+  
+    <PackageReference Include="Microsoft.Extensions.Logging.ApplicationInsights" Version="2.22.0" />
+  
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.14.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="5.0.0-beta.7" />
+    <None Update="host.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="local.settings.json">
+<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+</None>
+  </ItemGroup>
+
+  <!-- Add support for C# 8 nullable reference types -->
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+</Project>
