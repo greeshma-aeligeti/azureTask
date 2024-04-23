@@ -4,21 +4,21 @@ variable "location" {
 }
 
 variable "resource_group_name" {
-  description = "greeresourcegrp"
+  description = "Enter resource group name"
   type        = string
 }
 
 variable "storage_account_name" {
-  description = "greestorageacc"
+  description = "Enter storage account name"
   type        = string
 }
 
 variable "queue_name" {
-  description = "greequeue"
+  description = "enter queue name"
   default     = "myqueue"
 }
 
 variable "container_name" {
-  description = "greeblobcont"
+  description = "enter container name"
   default     = "mycontainer"
 }
