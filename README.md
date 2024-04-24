@@ -64,13 +64,25 @@ Before you start, ensure you have the following:
  
 #### The above three ids client id, tenant id, and client secret key are useful in terraform configuration file
 
+## Installations:
+- Install azure-func-tools package
+  ```
+  npm install -g azure-functions-core-tools@4
+  ```
+
 ## Setup Steps
 
-1.**Azure Resources Setup:**
+1. **Clone the repository:**
+```
+git clone <repository-url>
+cd <repository-directory>
+```
+2.**Azure Resources Setup:**
 *Deploy the necessary Azure resources using Terraform:*
 
   - *Initialize TerraformNavigate to the directory containing your Terraform files and run:*
   ```
+cd azure
 terraform init
 ```
  - *Plan the Terraform deploymentCheck what Terraform plans to deploy:*
@@ -80,12 +92,6 @@ terraform plan
  - *Apply the Terraform configurationDeploy the resources:*
   ```
 terraform apply
-```
-
-2. **Clone the repository:**
-```
-git clone <repository-url>
-cd <repository-directory>
 ```
 3. **Configure Environment Variables:**
 - Rename the `local.settings.json.example` to `local.settings.json`.
@@ -124,6 +130,7 @@ Ensure that your QueueToBlobFunction.csproj includes the necessary package refer
   ```
 - Deploy the function using Azure CLI:
   ```
+  cd src
   func azure functionapp publish <Your_Function_App_Name> --csharp     
   ```
 
